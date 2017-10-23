@@ -160,6 +160,8 @@
   mapperName CDATA #IMPLIED
   sqlProviderName CDATA #IMPLIED
   enableInsert CDATA #IMPLIED
+    enableUnselectiveUpdateByPrimaryKey CDATA #IMPLIED
+    enableUnselectiveInsert CDATA #IMPLIED
   enableSelectByPrimaryKey CDATA #IMPLIED
   enableSelectByExample CDATA #IMPLIED
   enableUpdateByPrimaryKey CDATA #IMPLIED

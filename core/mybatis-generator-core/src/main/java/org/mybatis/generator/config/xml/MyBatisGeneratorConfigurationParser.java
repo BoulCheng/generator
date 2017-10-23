@@ -266,13 +266,18 @@ public class MyBatisGeneratorConfigurationParser {
         }
 
         String enableInsert = attributes.getProperty("enableInsert"); //$NON-NLS-1$
-        if (stringHasValue(enableInsert)) {
+        if (stringHasValue(enableInsert)) {//默认为true
             tc.setInsertStatementEnabled(isTrue(enableInsert));
+        }
+
+        String enableUnselectiveInsert = attributes.getProperty("enableUnselectiveInsert"); //$NON-NLS-1$
+        if (stringHasValue(enableUnselectiveInsert)) {//默认为true
+            tc.setInsertStatementUnselectiveEnabled(isTrue(enableUnselectiveInsert));
         }
 
         String enableSelectByPrimaryKey = attributes
                 .getProperty("enableSelectByPrimaryKey"); //$NON-NLS-1$
-        if (stringHasValue(enableSelectByPrimaryKey)) {
+        if (stringHasValue(enableSelectByPrimaryKey)) {//默认为true
             tc.setSelectByPrimaryKeyStatementEnabled(
                     isTrue(enableSelectByPrimaryKey));
         }
@@ -280,42 +285,49 @@ public class MyBatisGeneratorConfigurationParser {
         String enableSelectByExample = attributes
                 .getProperty("enableSelectByExample"); //$NON-NLS-1$
         if (stringHasValue(enableSelectByExample)) {
-            tc.setSelectByExampleStatementEnabled(
+            tc.setSelectByExampleStatementEnabled(//默认为true
                     isTrue(enableSelectByExample));
         }
 
         String enableUpdateByPrimaryKey = attributes
                 .getProperty("enableUpdateByPrimaryKey"); //$NON-NLS-1$
         if (stringHasValue(enableUpdateByPrimaryKey)) {
-            tc.setUpdateByPrimaryKeyStatementEnabled(
+            tc.setUpdateByPrimaryKeyStatementEnabled(//默认为true
                     isTrue(enableUpdateByPrimaryKey));
+        }
+
+        String enableUnselectiveUpdateByPrimaryKey = attributes
+                .getProperty("enableUnselectiveUpdateByPrimaryKey"); //$NON-NLS-1$
+        if (stringHasValue(enableUnselectiveUpdateByPrimaryKey)) {
+            tc.setUpdateByPrimaryKeyStatementUnselectiveEnabled(//默认为true
+                    isTrue(enableUnselectiveUpdateByPrimaryKey));
         }
 
         String enableDeleteByPrimaryKey = attributes
                 .getProperty("enableDeleteByPrimaryKey"); //$NON-NLS-1$
         if (stringHasValue(enableDeleteByPrimaryKey)) {
-            tc.setDeleteByPrimaryKeyStatementEnabled(
+            tc.setDeleteByPrimaryKeyStatementEnabled(//默认为true
                     isTrue(enableDeleteByPrimaryKey));
         }
 
         String enableDeleteByExample = attributes
                 .getProperty("enableDeleteByExample"); //$NON-NLS-1$
         if (stringHasValue(enableDeleteByExample)) {
-            tc.setDeleteByExampleStatementEnabled(
+            tc.setDeleteByExampleStatementEnabled(//默认为true
                     isTrue(enableDeleteByExample));
         }
 
         String enableCountByExample = attributes
                 .getProperty("enableCountByExample"); //$NON-NLS-1$
         if (stringHasValue(enableCountByExample)) {
-            tc.setCountByExampleStatementEnabled(
+            tc.setCountByExampleStatementEnabled(//默认为true
                     isTrue(enableCountByExample));
         }
 
         String enableUpdateByExample = attributes
                 .getProperty("enableUpdateByExample"); //$NON-NLS-1$
         if (stringHasValue(enableUpdateByExample)) {
-            tc.setUpdateByExampleStatementEnabled(
+            tc.setUpdateByExampleStatementEnabled(//默认为true
                     isTrue(enableUpdateByExample));
         }
 

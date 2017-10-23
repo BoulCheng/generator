@@ -40,11 +40,15 @@ public class TableConfiguration extends PropertyHolder {
 
     private boolean insertStatementEnabled;
 
+    private boolean insertStatementUnselectiveEnabled;
+
     private boolean selectByPrimaryKeyStatementEnabled;
 
     private boolean selectByExampleStatementEnabled;
 
     private boolean updateByPrimaryKeyStatementEnabled;
+
+    private boolean updateByPrimaryKeyStatementUnselectiveEnabled;
 
     private boolean deleteByPrimaryKeyStatementEnabled;
 
@@ -102,9 +106,11 @@ public class TableConfiguration extends PropertyHolder {
         ignoredColumns = new HashMap<IgnoredColumn, Boolean>();
 
         insertStatementEnabled = true;
+        insertStatementUnselectiveEnabled = true;
         selectByPrimaryKeyStatementEnabled = true;
         selectByExampleStatementEnabled = true;
         updateByPrimaryKeyStatementEnabled = true;
+        updateByPrimaryKeyStatementUnselectiveEnabled = true;
         deleteByPrimaryKeyStatementEnabled = true;
         deleteByExampleStatementEnabled = true;
         countByExampleStatementEnabled = true;
@@ -128,6 +134,14 @@ public class TableConfiguration extends PropertyHolder {
         this.insertStatementEnabled = insertStatementEnabled;
     }
 
+    public boolean isInsertStatementUnselectiveEnabled() {
+        return insertStatementUnselectiveEnabled;
+    }
+
+    public void setInsertStatementUnselectiveEnabled(boolean insertStatementUnselectiveEnabled) {
+        this.insertStatementUnselectiveEnabled = insertStatementUnselectiveEnabled;
+    }
+
     public boolean isSelectByPrimaryKeyStatementEnabled() {
         return selectByPrimaryKeyStatementEnabled;
     }
@@ -144,6 +158,14 @@ public class TableConfiguration extends PropertyHolder {
     public void setUpdateByPrimaryKeyStatementEnabled(
             boolean updateByPrimaryKeyStatementEnabled) {
         this.updateByPrimaryKeyStatementEnabled = updateByPrimaryKeyStatementEnabled;
+    }
+
+    public boolean isUpdateByPrimaryKeyStatementUnselectiveEnabled() {
+        return updateByPrimaryKeyStatementUnselectiveEnabled;
+    }
+
+    public void setUpdateByPrimaryKeyStatementUnselectiveEnabled(boolean updateByPrimaryKeyStatementUnselectiveEnabled) {
+        this.updateByPrimaryKeyStatementUnselectiveEnabled = updateByPrimaryKeyStatementUnselectiveEnabled;
     }
 
     public boolean isColumnIgnored(String columnName) {

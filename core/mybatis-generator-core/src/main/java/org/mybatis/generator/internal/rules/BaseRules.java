@@ -59,7 +59,7 @@ public abstract class BaseRules implements Rules {
             return false;
         }
 
-        return tableConfiguration.isInsertStatementEnabled();
+        return tableConfiguration.isInsertStatementUnselectiveEnabled();
     }
 
     /**
@@ -120,7 +120,7 @@ public abstract class BaseRules implements Rules {
             return false;
         }
 
-        boolean rc = tableConfiguration.isUpdateByPrimaryKeyStatementEnabled()
+        boolean rc = tableConfiguration.isUpdateByPrimaryKeyStatementUnselectiveEnabled()
                 && introspectedTable.hasPrimaryKeyColumns()
                 && introspectedTable.hasBaseColumns();
 
